@@ -27,7 +27,7 @@ const countDown = async ({time, total}) => {
 
 /**
  * Execute!
- * /
+ */
 const TOTAL_NUM = 60;
 console.log('Something is going on...');
 countDown({time: TOTAL_NUM, total: TOTAL_NUM});
