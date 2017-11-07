@@ -1,5 +1,2 @@
-This repository will record my learning process.
-I am gonna put some technical passages here.
-Hopefully, this repository benefits not only me,
-but also people who love programming as much as I do.
-Happy to help!
+在这放学习时用过的练习代码。。
+可能会很乱哦。。
