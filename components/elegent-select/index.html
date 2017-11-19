@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>Elegent Select Component</title>
+		<style>
+			.hide{
+				display: none;
+			}
+			.elegent-select{
+				text-align: center;
+				width: 100px;
+			}
+			.options-container{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.option{
+				background-color: rgba(47,223,178, 0.6);
+			}
+			.toggle-btn{
+				background-color: rgba(141,122,34, 0.6);
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="elegent-select">
+			<div class="toggle-btn">请选择</div>
+			<ul class="options-container hide">
+				<li class="option option-1">1</li>
+				<li class="option option-2">2</li>
+				<li class="option option-3">3</li>
+				<li class="option option-4">4</li>
+				<li class="option option-5">5</li>
+			</ul>
+		</div>
+		<script src="http://zhcdn01.xoyo.com/xassets/lib/jquery/1.7.2/jquery.js"></script>
+		<script>
+
+
+// define touch event or click event type for this component
+const eventType = 'click';
+const container = document.querySelector('.options-container');
+const toggle = document.querySelector('.toggle-btn');
+const options = document.querySelectorAll('.option');
+
+toggle.addEventListener(eventType, function(e){
+	const showFlag = container.className.indexOf('hide');
+	if(showFlag > 0){
+		container.className = 'options-container';
+	} else {
+		container.className = 'options-container hide';
+	}
+});
+
+document.addEventListener('click', function(e){
+	const target = e.target;
+	if(target.className.indexOf('option-') > 0 ) {
+		container.className = 'options-container hide';
+		toggle.innerText = target.innerText;
+
+	}
+});
+		</script>
+	</body>
+</html>
