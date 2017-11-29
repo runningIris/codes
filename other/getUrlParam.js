@@ -1,4 +1,4 @@
-
+					
 var getUrlParam = function(name){
   function removeHTMLTag(str) {
     str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
@@ -15,3 +15,13 @@ var getUrlParam = function(name){
   return null;
 }
 
+
+const curry = params => fn => fn ? curry(fn(params)) : params;
+
+const removeHtmlTag = str => str.replace(/<\/?[^>]*>/g, '');
+const removeEndSpace = str => str.replace(/[ | ]*\n/g, '\n');
+const 
+const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+const search = window.location.search.substr(1).match(reg);
+
+const geturlParam = name => 
