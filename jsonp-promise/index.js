@@ -42,6 +42,7 @@ const jsonp = function (url, options = {}) {
         };
 
         // Add querystring component
+        // 这里为什么要用位操作符的反码来进行判断？有啥优势吗？
         url += (~url.indexOf('?') ? '&' : '?') + param + '=' + encodeURIComponent(id);
         url = url.replace('?&', '?');
 
@@ -49,6 +50,11 @@ const jsonp = function (url, options = {}) {
         script = document.createElement('script');
         script.src = url;
         target.parentNode.insertBefore(script, target);
+
+        // 现在可以理解为什么可以把cancel作为一个API暴露给外部使用了。。
+        // promise 返回的是一个对象，PENDING状态是可以转化为FULFILLED或者REJECTED
+        // 而reject操作可以把状态转化为REJECTED，进而终止整个Promise的流程。
+        // reject操作在状态为FULFILLED或者REJECTED的时候无效。
 
         cancel = function () {
             if (!window[id]){
