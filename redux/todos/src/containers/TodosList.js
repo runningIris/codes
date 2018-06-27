@@ -1,4 +1,3 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import List from '../components/List'
 import {TOGGLE_TODO, FILTERS} from '../action';
@@ -6,11 +5,11 @@ import {TOGGLE_TODO, FILTERS} from '../action';
 const filterTodos = (todos, filter) => {
   console.log(filter);
   switch (filter) {
-    case FILTERS.SHOW_ACTIVE:
+    case FILTERS.SHOW_ACTIVE.filter:
       return todos.filter(todo => !todo.completed);
-    case FILTERS.SHOW_COMPLETED:
+    case FILTERS.SHOW_COMPLETED.filter:
       return todos.filter(todo => todo.completed);
-    case FILTERS.SHOW_ALL:
+    case FILTERS.SHOW_ALL.filter:
     default:
     return todos;
   }
