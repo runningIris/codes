@@ -1,0 +1,3 @@
+- 异步dispatch
+- 命名空间
+- mapDispatchToProps的意义
