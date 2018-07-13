@@ -1,13 +1,16 @@
-let id = 1000;
+let id = 0;
 
 export const ADD_NEW_CHANNEL = 'ADD_NEW_CHANNEL';
 export const UPDATE_CHANNEL = 'UPDATE_CHANNEL';
 export const REMOVE_CHANNEL = 'REMOVE_CHANNEL';
 export const UPDATE_CHANNEL_LIST = 'UPDATE_CHANNEL_LIST';
+export const STORE_NEWS = 'STORE_NEWS';
+export const CLEAR_NEWS = 'CLEAR_NEWS';
 
 const updateList = (channel, content) => {
   id++;
-  return {
+  console.log('dispatching updateChannel');
+  const action = {
     type: UPDATE_CHANNEL_LIST,
     channel,
     data: [{
@@ -15,6 +18,8 @@ const updateList = (channel, content) => {
       content
     }]
   };
+  console.log({action});
+  return action;
 };
 
 const updateChannel = (channel, data) => {
@@ -31,7 +36,7 @@ const updateChannel = (channel, data) => {
         content
       }
     })
-  }
+  };
 };
 
 const addNewChannel = (channel, data) => {
@@ -48,7 +53,7 @@ const addNewChannel = (channel, data) => {
         content
       }
     })
-  }
+  };
 };
 
 export const actionCreator =  {

@@ -3,13 +3,18 @@ export default class Service {
     return {
       code: 1,
       data: {
-        channel: parseInt(Math.random() * 1000),
+        channel: String(parseInt(Math.random() * 1000)),
         list: [
+          parseInt(Math.random() * 1000000),
+          parseInt(Math.random() * 1000000),
+          parseInt(Math.random() * 1000000),
+          parseInt(Math.random() * 1000000),
+          parseInt(Math.random() * 1000000),
           parseInt(Math.random() * 1000000),
           parseInt(Math.random() * 1000000),
           parseInt(Math.random() * 1000000)
         ]
       }
-    }
+    };
   }
 }

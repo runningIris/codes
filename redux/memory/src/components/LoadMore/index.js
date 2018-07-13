@@ -13,6 +13,11 @@ export default class LoadMore extends Component {
   }
 
   render(){
-    return <button onClick={this.handleClick}>Load More</button>;
+    return (
+      <div>
+        <h3>Add Channel</h3>
+        <button onClick={this.handleClick}>Load From Service</button>
+      </div>
+    );
   }
 }
